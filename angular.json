@@ -15,6 +15,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "firebase",
+              "@firebase/app",
+              "firebase/app",
+              "@firebase/database",
+              "@firebase/firestore",
+              "@firebase/functions",
+              "@firebase/performance",
+              "@firebase/remote-config"
+            ],
             "outputPath": "dist/apps/frontend-ionic",
             "index": "apps/frontend-ionic/src/index.html",
             "main": "apps/frontend-ionic/src/main.ts",
@@ -30,7 +40,9 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["apps/frontend-ionic/src/styles.scss"],
+            "styles": [
+              "apps/frontend-ionic/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -89,7 +101,10 @@
               "apps/frontend-ionic/tsconfig.spec.json",
               "apps/frontend-ionic/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/frontend-ionic/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend-ionic/**/*"
+            ]
           }
         },
         "test": {
@@ -98,6 +113,10 @@
             "jestConfig": "apps/frontend-ionic/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
@@ -122,8 +141,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/frontend-ionic-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/frontend-ionic-e2e/**/*"]
+            "tsConfig": [
+              "apps/frontend-ionic-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend-ionic-e2e/**/*"
+            ]
           }
         }
       }
@@ -153,7 +177,10 @@
               "libs/horizontal-scroll/tsconfig.lib.json",
               "libs/horizontal-scroll/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/horizontal-scroll/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/horizontal-scroll/**/*"
+            ]
           }
         },
         "test": {

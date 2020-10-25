@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "newsletter-3cc38": {
+      "hosting": {
+        "frontend-ionic": [
+          "newsletter-3cc38"
+        ]
+      }
+    }
+  }
+}
