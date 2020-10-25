@@ -127,6 +127,48 @@
           }
         }
       }
+    },
+    "horizontal-scroll": {
+      "projectType": "library",
+      "root": "libs/horizontal-scroll",
+      "sourceRoot": "libs/horizontal-scroll/src",
+      "prefix": "adventist",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/horizontal-scroll/tsconfig.lib.json",
+            "project": "libs/horizontal-scroll/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/horizontal-scroll/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/horizontal-scroll/tsconfig.lib.json",
+              "libs/horizontal-scroll/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/horizontal-scroll/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/horizontal-scroll/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

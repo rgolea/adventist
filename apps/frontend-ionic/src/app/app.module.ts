@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.router';
 import { RouterModule } from '@angular/router';
+import { HorizontalScrollModule } from "@adventist/horizontal-scroll";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     IonicModule.forRoot(),
     AppRoutingModule,
     RouterModule.forRoot([]),
+    HorizontalScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent],

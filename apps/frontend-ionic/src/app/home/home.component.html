@@ -1,181 +1,106 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      newsbox
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-app>
+  <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">newsbox
+      <ion-title size="large">
+        <ion-text color="dark">
+          <small>newsbox</small>
+        </ion-text>
       </ion-title>
+      <ion-buttons collapse="true" slot="end">
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" name="menu-outline"></ion-icon
+        ></ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12">
-        <ion-segment scrollable>
-
-          <ion-segment-button>
-            <ion-button color="dark" style="--border-radius: 20px; --padding-start: 8px; --padding-end: 8px; --padding-top: 8px; --padding-bottom: 8px;">
-              <ion-icon slot="icon-only" name="add"></ion-icon>
-            </ion-button>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;">
-            <ion-item  style="--border-style: none; --inner-padding-end: 5px; --padding-start: 5px;">
-              <ion-avatar slot="start">
-                <img src="https://i.cbc.ca/1.4477824.1518118750!/fileImage/httpImage/muskeg-lake-church.jpg">
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-button
+          style="
+            --border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 999 !important;
+          "
+          color="dark"
+          ><ion-icon slot="icon-only" name="add-outline"></ion-icon>
+        </ion-button>
+        <adventist-horizontal-scroll-container style="padding-left: 4rem;">
+          <adventist-horizontal-scroll-item
+            *ngFor="let item of [1, 2, 3, 4, 5, 6]"
+            style="--horizontal-scroll-item-padding: 0.5rem;"
+          >
+            <ion-chip style="border: none;" outline="true">
+              <ion-avatar>
+                <img
+                  src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+                />
               </ion-avatar>
-              <ion-label>
-                <h2>Iglesia</h2>
-                <h3>Sagunto</h3>
-              </ion-label>
-            </ion-item>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;">
-            <ion-item  style="--border-style: none; --inner-padding-end: 5px; --padding-start: 5px;">
-              <ion-avatar slot="start">
-                <img src="https://cdn.theatlantic.com/thumbor/lBeeyT6rtHDQf_n1doc8yspcm2g=/0x0:6720x3780/720x405/media/img/mt/2020/03/GettyImages_1203669089/original.jpg">
-              </ion-avatar>
-              <ion-label>
-                <h2>Iglesia</h2>
-                <h3>Valencia</h3>
-              </ion-label>
-            </ion-item>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;">
-            <ion-item  style="--border-style: none; --inner-padding-end: 5px; --padding-start: 5px;">
-              <ion-avatar slot="start">
-                <img src="https://i.cbc.ca/1.4477824.1518118750!/fileImage/httpImage/muskeg-lake-church.jpg">
-              </ion-avatar>
-              <ion-label>
-                <h2>Iglesia</h2>
-                <h3>Madrid</h3>
-              </ion-label>
-            </ion-item>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;">
-            <ion-item  style="--border-style: none; --inner-padding-end: 5px; --padding-start: 5px;">
-              <ion-avatar slot="start">
-                <img src="https://cdn.theatlantic.com/thumbor/lBeeyT6rtHDQf_n1doc8yspcm2g=/0x0:6720x3780/720x405/media/img/mt/2020/03/GettyImages_1203669089/original.jpg">
-              </ion-avatar>
-              <ion-label>
-                <h2>Iglesia</h2>
-                <h3>Barcelona</h3>
-              </ion-label>
-            </ion-item>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;">
-            <ion-item  style="--border-style: none; --inner-padding-end: 5px; --padding-start: 5px;">
-              <ion-avatar slot="start">
-                <img src="https://i.cbc.ca/1.4477824.1518118750!/fileImage/httpImage/muskeg-lake-church.jpg">
-              </ion-avatar>
-              <ion-label>
-                <h2>Iglesia</h2>
-                <h3>Teruel</h3>
-              </ion-label>
-            </ion-item>
-          </ion-segment-button>
-
-        </ion-segment>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <ion-segment scrollable>
-
-          <ion-segment-button style="--padding-start: 0px;  --padding-end: 0px;">
-            <ion-chip color="primary">
-              <ion-label>Todos</ion-label>
+              <ion-label>Nombre Iglesia {{ item }}</ion-label>
             </ion-chip>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;  --padding-end: 0px;">
-            <ion-chip color="primary">
-              <ion-label>Dep. Familia</ion-label>
-            </ion-chip>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;  --padding-end: 0px;">
-            <ion-chip color="primary">
-              <ion-label>Dep. Jóvenes</ion-label>
-            </ion-chip>
-          </ion-segment-button>
-
-          <ion-segment-button style="--padding-start: 0px;  --padding-end: 0px;">
-            <ion-chip color="primary">
-              <ion-label>Dep. Infancia</ion-label>
-            </ion-chip>
-          </ion-segment-button>
-
-        </ion-segment>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-
-        <ion-list>
-          <ion-item>
-            <ion-thumbnail slot="start" style="height: 100px;">
-              <img src="https://facilityexecutive.com/wp-content/uploads/2019/09/38391858_ml-800x418-1.jpg">
-            </ion-thumbnail>
-            <ion-label>
-              <h2 style="white-space: normal; text-overflow: unset;">Neque porro quisquam est qui dolorem ipsum quia</h2>
-              <h3>15 Enero</h3>
-              <p>Dep. Familia | Ver más</p>
-            </ion-label>
-          </ion-item>
-
-          <ion-item>
-            <ion-thumbnail slot="start" style="height: 100px;">
-              <img src="https://facilityexecutive.com/wp-content/uploads/2019/09/38391858_ml-800x418-1.jpg">
-            </ion-thumbnail>
-            <ion-label>
-              <h2 style="white-space: normal; text-overflow: unset;">Neque porro quisquam est qui dolorem ipsum quia</h2>
-              <h3>15 Enero</h3>
-              <p>Dep. Familia | Ver más</p>
-            </ion-label>
-          </ion-item>
-
-          <ion-item>
-            <ion-thumbnail slot="start" style="height: 100px;">
-              <img src="https://facilityexecutive.com/wp-content/uploads/2019/09/38391858_ml-800x418-1.jpg">
-            </ion-thumbnail>
-            <ion-label>
-              <h2 style="white-space: normal; text-overflow: unset;">Neque porro quisquam est qui dolorem ipsum quia</h2>
-              <h3>15 Enero</h3>
-              <p>Dep. Familia | Ver más</p>
-            </ion-label>
-          </ion-item>
-
-          <ion-item>
-            <ion-thumbnail slot="start" style="height: 100px;">
-              <img src="https://facilityexecutive.com/wp-content/uploads/2019/09/38391858_ml-800x418-1.jpg">
-            </ion-thumbnail>
-            <ion-label>
-              <h2 style="white-space: normal; text-overflow: unset;">Neque porro quisquam est qui dolorem ipsum quia</h2>
-              <h3>15 Enero</h3>
-              <p>Dep. Familia | Ver más</p>
-            </ion-label>
-          </ion-item>
-
-
-        </ion-list>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
-
-</ion-content>
+          </adventist-horizontal-scroll-item>
+        </adventist-horizontal-scroll-container>
+      </ion-row>
+    </ion-grid>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Madison, WI</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button fill="outline" color="dark">
+          <ion-label>Ver más</ion-label>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-segment scrollable="true" value="favorite">
+      <ion-segment-button value="call">
+        <ion-label>Call</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favorite">
+        <ion-label>Favorite</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="map">
+        <ion-label>Map</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="map2">
+        <ion-label>Map2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="map3">
+        <ion-label>Map3</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="map4">
+        <ion-label>Map4</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="map5">
+        <ion-label>Map5</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <div>
+      <img
+        style="
+          position: absolute;
+          float: left;
+          z-index: 999;
+          border-radius: 10px;
+        "
+        src="https://picsum.photos/200/300"
+      />
+    </div>
+    <div style="text-align: right;">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Madison, WI</ion-card-title>
+          <ion-card-subtitle>Fecha</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <span style="font-style: italic;">Categoría</span>
+          <ion-button fill="outline" color="dark">
+            <ion-label>Ver más</ion-label>
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
+</ion-app>

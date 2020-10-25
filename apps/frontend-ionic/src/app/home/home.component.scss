@@ -1,0 +1,22 @@
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+
+.portada {
+  background: url(https://picsum.photos/100/60) no-repeat fixed center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 40%;
+  width: 100%;
+}
+
+.label {
+  font-size: 12px;
+}
+
+.iconmargin {
+  margin-right: 5px;
+}
