@@ -1,0 +1,85 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title size="large">
+      <ion-text color="dark">
+        <small>newsbox</small>
+      </ion-text>
+    </ion-title>
+    <ion-buttons collapse="true" slot="end">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="portada" style="position: relative;">
+    <ion-button
+      style="bottom: 10px; position: absolute; right: 10px;"
+      color="light"
+    >
+      <ion-icon style="margin-right: 10px;" name="navigate-outline"></ion-icon>
+      <ion-label>Cómo llegar</ion-label>
+    </ion-button>
+    <ion-button
+      style="
+        --border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        bottom: -25px;
+        margin-left: 20px;
+        position: absolute;
+      "
+      color="dark"
+      ><ion-icon
+        style="text-align: right;"
+        slot="icon-only"
+        name="add-outline"
+      ></ion-icon>
+    </ion-button>
+  </div>
+  <div class="ion-padding">
+    <ion-text color="dark">
+      <h6><b>Sagunto</b></h6>
+      <p>
+        Calle Rodamilans, 31,<br />
+        46500 SAGUNT (Valencia)
+      </p>
+      <p>
+        <b>Horario</b>: <br />V: 20:00h<br />
+        S: 10:00h - 17:00h<br />
+        Mi: 20:00h
+      </p>
+    </ion-text>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <ion-button class="label" fill="outline" color="dark">
+          <ion-label>sagunto.adventista.es</ion-label>
+        </ion-button>
+        <ion-button class="label" fill="outline" color="dark">
+          <ion-icon class="iconmargin" name="logo-facebook"></ion-icon>
+          <ion-label>@IASDSagunto</ion-label>
+        </ion-button>
+        <ion-button class="label" fill="outline" color="dark">
+          <ion-icon class="iconmargin" name="logo-instagram"></ion-icon>
+          <ion-label>@iasdsagunto</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col class="ion-text-left">
+        <ion-button class="label" fill="outline" color="dark">
+          <ion-label>sagunto@adventista.es</ion-label>
+        </ion-button>
+        <ion-button class="label" fill="outline" color="dark">
+          <ion-icon class="iconmargin" name="logo-youtube"></ion-icon>
+          <ion-label>@iasdsagunto</ion-label>
+        </ion-button>
+        <ion-button class="label" fill="outline" color="dark">
+          <ion-icon class="iconmargin" name="logo-twitter"></ion-icon>
+          <ion-label>@iasdsagunto</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
