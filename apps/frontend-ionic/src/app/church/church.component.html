@@ -1,9 +1,7 @@
-<ion-header class="ion-no-border">
+<ion-header class="ion-no-border" style="position: a;">
   <ion-toolbar>
-    <ion-title size="large">
-      <ion-text color="dark">
-        <small>newsbox</small>
-      </ion-text>
+    <ion-title>
+      <b>newsbox</b>
     </ion-title>
     <ion-buttons collapse="true" slot="end">
       <ion-button color="dark">
@@ -54,9 +52,14 @@
   </div>
   <ion-grid>
     <ion-row>
-      <ion-col class="ion-text-right">
+
+      <!--Only for mobile not for web or tablet-->
+
         <ion-button class="label" fill="outline" color="dark">
           <ion-label>sagunto.adventista.es</ion-label>
+        </ion-button>
+        <ion-button class="label" fill="outline" color="dark">
+          <ion-label>sagunto@adventista.es</ion-label>
         </ion-button>
         <ion-button class="label" fill="outline" color="dark">
           <ion-icon class="iconmargin" name="logo-facebook"></ion-icon>
@@ -66,11 +69,6 @@
           <ion-icon class="iconmargin" name="logo-instagram"></ion-icon>
           <ion-label>@iasdsagunto</ion-label>
         </ion-button>
-      </ion-col>
-      <ion-col class="ion-text-left">
-        <ion-button class="label" fill="outline" color="dark">
-          <ion-label>sagunto@adventista.es</ion-label>
-        </ion-button>
         <ion-button class="label" fill="outline" color="dark">
           <ion-icon class="iconmargin" name="logo-youtube"></ion-icon>
           <ion-label>@iasdsagunto</ion-label>
@@ -79,7 +77,7 @@
           <ion-icon class="iconmargin" name="logo-twitter"></ion-icon>
           <ion-label>@iasdsagunto</ion-label>
         </ion-button>
-      </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>
