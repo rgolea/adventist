@@ -3,14 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
-import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.router';
 import { RouterModule } from '@angular/router';
 import { HorizontalScrollModule } from "@adventist/horizontal-scroll";
 import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
