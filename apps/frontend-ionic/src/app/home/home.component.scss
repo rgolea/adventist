@@ -3,6 +3,11 @@ ion-toolbar {
   --ion-color-base: transparent !important;
 }
 
+.header-md::after{
+  background-image: none;
+}
+
+
 .portada {
   background: url(https://picsum.photos/100/60) no-repeat fixed center;
   -webkit-background-size: cover;

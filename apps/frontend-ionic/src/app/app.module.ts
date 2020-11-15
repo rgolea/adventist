@@ -12,7 +12,9 @@ import { AngularFireModule } from '@angular/fire';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({
+      mode: "md"
+    }),
     AppRoutingModule,
     RouterModule.forRoot([]),
     HorizontalScrollModule,
