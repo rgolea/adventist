@@ -40,9 +40,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": [
-              "apps/frontend-ionic/src/styles.scss"
-            ],
+            "styles": ["apps/frontend-ionic/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -101,10 +99,7 @@
               "apps/frontend-ionic/tsconfig.spec.json",
               "apps/frontend-ionic/tsconfig.editor.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/frontend-ionic/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/frontend-ionic/**/*"]
           }
         },
         "test": {
@@ -141,13 +136,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/frontend-ionic-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/frontend-ionic-e2e/**/*"
-            ]
+            "tsConfig": ["apps/frontend-ionic-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/frontend-ionic-e2e/**/*"]
           }
         }
       }
@@ -177,10 +167,7 @@
               "libs/horizontal-scroll/tsconfig.lib.json",
               "libs/horizontal-scroll/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/horizontal-scroll/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/horizontal-scroll/**/*"]
           }
         },
         "test": {
@@ -194,6 +181,31 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        }
+      }
+    },
+    "interfaces": {
+      "root": "libs/interfaces",
+      "sourceRoot": "libs/interfaces/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/interfaces/tsconfig.lib.json",
+              "libs/interfaces/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/interfaces/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }

@@ -32,6 +32,9 @@
     },
     "horizontal-scroll": {
       "tags": []
+    },
+    "interfaces": {
+      "tags": []
     }
   }
 }
