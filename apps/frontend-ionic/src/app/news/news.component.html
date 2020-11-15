@@ -1,39 +1,46 @@
-<ion-header traslucent="false" class="ion-no-border" *ngIf="(news$ | async) as news">
-    <ion-toolbar>
-      <ion-buttons collapse="true" slot="start">
-        <ion-button color="dark">
-          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon
-        ></ion-button>
-      </ion-buttons>
-      <ion-buttons collapsse="true" slot="end"
-        ><ion-button color="dark" *ngIf="news.date">
-          <ion-icon slot="icon-only" name="notifications-outline"></ion-icon
-        ></ion-button>
-        <ion-button color="dark">
-          <ion-icon slot="icon-only" name="share-outline"></ion-icon
-        ></ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content fullscreen="true" #content *ngIf="(news$ | async) as news">
-    <div>
-      <ion-img [src]="news?.imgLarge"></ion-img>
-      <ion-text
-        class="ion-padding"
-        style="
+<ion-header
+  traslucent="false"
+  class="ion-no-border"
+  *ngIf="news$ | async as news"
+>
+  <ion-toolbar>
+    <ion-buttons collapse="true" slot="start">
+      <ion-button color="dark" (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+    <ion-buttons collapsse="true" slot="end"
+      ><ion-button color="dark" *ngIf="news.date">
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon
+      ></ion-button>
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="share-outline"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" #content *ngIf="news$ | async as news">
+  <div>
+    <ion-img [src]="news?.imgLarge"></ion-img>
+    <ion-text
+      class="ion-padding"
+      style="
         margin-top: -58px;
         position: absolute;
         background-color: black;
         padding-bottom: 8px;
-        padding-top: 0px;"
-        color="light"
-      >
-        <h4><b>{{news.title}}</b></h4>
-      </ion-text>
-    </div>
-    <ion-text>
-      <p class="ion-padding">
-        {{news.content}}
-      </p>
+        padding-top: 0px;
+      "
+      color="light"
+    >
+      <h4>
+        <b>{{ news.title }}</b>
+      </h4>
     </ion-text>
-  </ion-content>
+  </div>
+  <ion-text>
+    <p class="ion-padding">
+      {{ news.content }}
+    </p>
+  </ion-text>
+</ion-content>
