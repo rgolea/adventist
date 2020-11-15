@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@adventist/horizontal-scroll": ["libs/horizontal-scroll/src/index.ts"]
+      "@adventist/horizontal-scroll": ["libs/horizontal-scroll/src/index.ts"],
+      "@adventist/interfaces": ["libs/interfaces/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

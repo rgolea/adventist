@@ -1,4 +1,4 @@
-<ion-header traslucent="false" class="ion-no-border">
+<ion-header traslucent="false" class="ion-no-border" *ngIf="(news$ | async) as news">
     <ion-toolbar>
       <ion-buttons collapse="true" slot="start">
         <ion-button color="dark">
@@ -6,7 +6,7 @@
         ></ion-button>
       </ion-buttons>
       <ion-buttons collapsse="true" slot="end"
-        ><ion-button color="dark">
+        ><ion-button color="dark" *ngIf="news.date">
           <ion-icon slot="icon-only" name="notifications-outline"></ion-icon
         ></ion-button>
         <ion-button color="dark">
@@ -15,9 +15,9 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content fullscreen="true" #content>
+  <ion-content fullscreen="true" #content *ngIf="(news$ | async) as news">
     <div>
-      <ion-img src="https://picsum.photos/500"></ion-img>
+      <ion-img [src]="news?.imgLarge"></ion-img>
       <ion-text
         class="ion-padding"
         style="
@@ -28,30 +28,12 @@
         padding-top: 0px;"
         color="light"
       >
-        <h4><b>El título de la noticia</b></h4>
+        <h4><b>{{news.title}}</b></h4>
       </ion-text>
     </div>
     <ion-text>
       <p class="ion-padding">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
-        cupiditate ab sunt dolore repellendus ullam odit amet quo facilis quia
-        natus alias consequatur, dicta architecto pariatur quis quasi esse ad in
-        et! Rem quis doloremque numquam consectetur voluptatem aliquid odit,
-        necessitatibus, accusamus nisi quae praesentium illum blanditiis quasi
-        itaque earum suscipit vel, nostrum inventore laborum veritatis omnis
-        reiciendis vero architecto. Eaque fugiat id eos velit non a! Magni aut
-        alias quos fugiat earum ea nostrum et, perspiciatis illo cupiditate
-        dolorem, repudiandae veniam maiores, quisquam adipisci enim unde eius
-        vel quam. Maiores quasi voluptatibus suscipit sed nihil ducimus veniam
-        beatae veritatis dolorum, iusto quisquam esse impedit, in nesciunt qui
-        iste quod commodi ex cumque necessitatibus voluptatum rerum. Voluptates
-        inventore nam illum necessitatibus mollitia, repellat ullam provident
-        quibusdam dolores, obcaecati quam quo iusto impedit cumque quaerat
-        fugiat laboriosam. Odio autem eum et, at facilis ipsam reprehenderit
-        molestias, quisquam suscipit veniam eveniet quasi exercitationem culpa
-        corporis dolorum provident odit! Eum esse omnis ea accusantium corporis
-        praesentium minus, assumenda fugiat corrupti quo ut quasi magnam
-        adipisci culpa.
+        {{news.content}}
       </p>
     </ion-text>
   </ion-content>
