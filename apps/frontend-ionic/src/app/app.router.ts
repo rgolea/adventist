@@ -14,6 +14,11 @@ const routes: Routes = [
   },
   {
     path: 'news',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
+    path: 'news',
     loadChildren: () =>
       defer(() => import('./news/news.module')).pipe(
         map((m) => m.NewsModule),
