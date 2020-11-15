@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewsComponent } from './news.component';
 
-const routes: Routes = [
-  { path: ':id', component: NewsComponent },
-  { path: '**', pathMatch: 'full', redirectTo: '' }
-];
+const routes: Routes = [{ path: ':id', component: NewsComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class NewsRoutingModule { }
+export class NewsRoutingModule {}
