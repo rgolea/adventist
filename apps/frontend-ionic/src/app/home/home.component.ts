@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ReplaySubject, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { News } from '@adventist/interfaces';
 
 @Component({
   selector: 'adventist-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject();
+  public newsList$ = new ReplaySubject<News[]>(1);
 
-  constructor() { }
+  constructor(private readonly afs: AngularFirestore) {}
 
   ngOnInit(): void {
+    const collection = this.afs.collection<News>('news');
+
+    collection
+      .valueChanges({ idField: 'uid' })
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((val) => this.newsList$.next(val));
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+  }
 }

@@ -1,0 +1,7 @@
+<ion-list lines="none">
+  <adventist-news-list-item
+    *ngFor="let newsItem of newsList; let i = index"
+    [news]="newsItem"
+    [thumbnailStart]="i % 2 === 0"
+  ></adventist-news-list-item>
+</ion-list>
