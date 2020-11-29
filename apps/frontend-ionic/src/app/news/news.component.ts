@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ReplaySubject, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { News } from '@adventist/interfaces';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'adventist-news',
@@ -23,8 +22,7 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly afs: AngularFirestore,
-    private readonly route: ActivatedRoute,
-    private readonly navController: NavController
+    private readonly route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -35,10 +33,6 @@ export class NewsComponent implements OnInit, OnDestroy {
       .valueChanges()
       .pipe(takeUntil(this.destroy$))
       .subscribe((val) => this.news$.next(val));
-  }
-
-  goBack(): void {
-    this.navController.back();
   }
 
   ngOnDestroy() {
