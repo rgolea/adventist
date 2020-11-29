@@ -1,0 +1,43 @@
+<ion-item>
+  <ion-thumbnail
+    [slot]="thumbnailStart ? 'start' : 'end'"
+    style="height: 150px; width: 80px; margin-right: 0px;"
+  >
+    <img [src]="news.imgSmall" style="border-radius: 10px !important;" />
+  </ion-thumbnail>
+  <ion-label
+    style="
+      box-shadow: 0px 5px 22px -1px rgb(200 200 200 / 18%);
+      --background: transparent !important;
+      margin-right: 10px;
+      margin-top: 10px;
+      border-radius: 0px 10px 10px 0px;
+    "
+  >
+    <h2
+      style="white-space: normal; text-overflow: unset; padding-left: 10px;"
+      [routerLink]="['/news/' + news.uid]"
+    >
+      {{ news.title }}
+    </h2>
+    <p style="padding-left: 10px;" *ngIf="news.date">
+      {{ news.date }}
+    </p>
+    <p style="padding-left: 10px;">
+      <ion-chip
+        outline="true"
+        color="primary"
+        style="
+          font-size: 10px;
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          margin-left: 0px;
+        "
+      >
+        Dep. Familia
+      </ion-chip>
+    </p>
+  </ion-label>
+</ion-item>
