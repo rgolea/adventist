@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ChurchComponent } from './church.component';
 
 const routes: Routes = [
-  { path: '', component: ChurchComponent },
+  { path: ':id', component: ChurchComponent },
   { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
