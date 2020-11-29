@@ -10,7 +10,7 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content *ngIf="church$ | async as church">
   <div class="portada" style="position: relative;">
     <ion-button
       style="bottom: 10px; position: absolute; right: 10px;"
@@ -38,46 +38,73 @@
   </div>
   <div class="ion-padding">
     <ion-text color="dark">
-      <h6><b>Sagunto</b></h6>
-      <p>
-        Calle Rodamilans, 31,<br />
-        46500 SAGUNT (Valencia)
+      <h6>
+        <b>{{ church.name }}</b>
+      </h6>
+      <p *ngIf="church.address as address">
+        {{ address }}
       </p>
-      <p>
-        <b>Horario</b>: <br />V: 20:00h<br />
-        S: 10:00h - 17:00h<br />
-        Mi: 20:00h
+      <p *ngIf="church.schedule as schedule">
+        {{ schedule }}
       </p>
     </ion-text>
   </div>
   <ion-grid>
     <ion-row>
-
       <!--Only for mobile not for web or tablet-->
 
-        <ion-button class="label" fill="outline" color="dark">
-          <ion-label>sagunto.adventista.es</ion-label>
-        </ion-button>
-        <ion-button class="label" fill="outline" color="dark">
-          <ion-label>sagunto@adventista.es</ion-label>
-        </ion-button>
-        <ion-button class="label" fill="outline" color="dark">
-          <ion-icon class="iconmargin" name="logo-facebook"></ion-icon>
-          <ion-label>@IASDSagunto</ion-label>
-        </ion-button>
-        <ion-button class="label" fill="outline" color="dark">
-          <ion-icon class="iconmargin" name="logo-instagram"></ion-icon>
-          <ion-label>@iasdsagunto</ion-label>
-        </ion-button>
-        <ion-button class="label" fill="outline" color="dark">
-          <ion-icon class="iconmargin" name="logo-youtube"></ion-icon>
-          <ion-label>@iasdsagunto</ion-label>
-        </ion-button>
-        <ion-button class="label" fill="outline" color="dark">
-          <ion-icon class="iconmargin" name="logo-twitter"></ion-icon>
-          <ion-label>@iasdsagunto</ion-label>
-        </ion-button>
-
+      <ion-button
+        class="label"
+        fill="outline"
+        color="dark"
+        *ngIf="church.website as website"
+      >
+        <ion-label>{{ website }}</ion-label>
+      </ion-button>
+      <ion-button
+        class="label"
+        fill="outline"
+        color="dark"
+        *ngIf="church.email as email"
+      >
+        <ion-label>{{ email }}</ion-label>
+      </ion-button>
+      <ion-button
+        class="label"
+        fill="outline"
+        color="dark"
+        *ngIf="church.facebook as facebook"
+      >
+        <ion-icon class="iconmargin" name="logo-facebook"></ion-icon>
+        <ion-label>{{ facebook }}</ion-label>
+      </ion-button>
+      <ion-button
+        class="label"
+        fill="outline"
+        color="dark"
+        *ngIf="church.instagram as instagram"
+      >
+        <ion-icon class="iconmargin" name="logo-instagram"></ion-icon>
+        <ion-label>{{ instagram }}</ion-label>
+      </ion-button>
+      <ion-button
+        class="label"
+        fill="outline"
+        color="dark"
+        *ngIf="church.youtube as youtube"
+      >
+        <ion-icon class="iconmargin" name="logo-youtube"></ion-icon>
+        <ion-label>{{ youtube }}</ion-label>
+      </ion-button>
+      <ion-button
+        class="label"
+        fill="outline"
+        color="dark"
+        *ngIf="church.twitter as twitter"
+      >
+        <ion-icon class="iconmargin" name="logo-twitter"></ion-icon>
+        <ion-label>{{ twitter }}</ion-label>
+      </ion-button>
     </ion-row>
   </ion-grid>
 </ion-content>

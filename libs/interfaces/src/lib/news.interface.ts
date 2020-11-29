@@ -1,8 +1,10 @@
+import { firestore } from "firebase/app";
+
 export interface News {
-  uid: string;
+  uid: firestore.CollectionReference;
   title: string;
   content: string;
   imgLarge?: string;
   imgSmall?: string;
-  date?: string;
+  date?: firestore.Timestamp;
 }

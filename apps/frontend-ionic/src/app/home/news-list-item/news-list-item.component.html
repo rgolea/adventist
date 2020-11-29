@@ -1,4 +1,4 @@
-<ion-item>
+<ion-item [routerLink]="['/news', news.uid]">
   <ion-thumbnail
     [slot]="thumbnailStart ? 'start' : 'end'"
     style="height: 150px; width: 80px; margin-right: 0px;"
@@ -16,12 +16,11 @@
   >
     <h2
       style="white-space: normal; text-overflow: unset; padding-left: 10px;"
-      [routerLink]="['/news/' + news.uid]"
     >
       {{ news.title }}
     </h2>
     <p style="padding-left: 10px;" *ngIf="news.date">
-      {{ news.date }}
+      {{ news.date.toDate() | date }}
     </p>
     <p style="padding-left: 10px;">
       <ion-chip
@@ -35,6 +34,8 @@
           padding-bottom: 5px;
           margin-left: 0px;
         "
+        [routerLink]="['/home']"
+        (click)="$event.stopPropagation()"
       >
         Dep. Familia
       </ion-chip>

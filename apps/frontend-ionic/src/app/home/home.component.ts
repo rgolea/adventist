@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private readonly afs: AngularFirestore) {}
 
   ngOnInit(): void {
-    const collection = this.afs.collection<News>('news');
+    const collection = this.afs.collection<News>('news', (ref) =>
+      ref.where('date', '>', new Date()).orderBy('date', 'asc')
+    );
 
     collection
       .valueChanges({ idField: 'uid' })
