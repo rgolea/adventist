@@ -11,31 +11,29 @@
   </ion-toolbar>
 </ion-header>
 <ion-content *ngIf="church$ | async as church">
-  <div class="portada" style="position: relative;">
+  <div
+    style="height: 300px;"
+    leaflet
+    [leafletOptions]="options"
+    (leafletMapReady)="onMapReady($event)"
+  ></div>
+  <div
+    class="ion-padding"
+    style="display: flex; justify-content: space-between; align-items: center;"
+  >
     <ion-button
-      style="bottom: 10px; position: absolute; right: 10px;"
-      color="light"
+      style="--border-radius: 100%; width: 50px; height: 50px;"
+      color="dark"
     >
+      <ion-icon style="text-align: right;" slot="icon-only" name="add-outline">
+      </ion-icon>
+    </ion-button>
+    <ion-button color="light">
       <ion-icon style="margin-right: 10px;" name="navigate-outline"></ion-icon>
       <ion-label>Cómo llegar</ion-label>
     </ion-button>
-    <ion-button
-      style="
-        --border-radius: 100%;
-        width: 50px;
-        height: 50px;
-        bottom: -25px;
-        margin-left: 20px;
-        position: absolute;
-      "
-      color="dark"
-      ><ion-icon
-        style="text-align: right;"
-        slot="icon-only"
-        name="add-outline"
-      ></ion-icon>
-    </ion-button>
   </div>
+
   <div class="ion-padding">
     <ion-text color="dark">
       <h6>
