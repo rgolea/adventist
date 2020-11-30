@@ -38,9 +38,17 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "leaflet/"
               }
             ],
-            "styles": ["apps/frontend-ionic/src/styles.scss"],
+            "styles": [
+              "./node_modules/leaflet/dist/leaflet.css",
+              "apps/frontend-ionic/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
